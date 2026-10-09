@@ -51,98 +51,221 @@ export default function Home() {
   return (
     <main className="w-full max-w-full overflow-x-hidden bg-brand-ivory text-brand-black">
       {/* =========================================================
-          HERO
+          HERO WITH FULL-WIDTH DUAL-COLOR TYPOGRAPHY
       ========================================================= */}
 
-      <section className="relative w-full overflow-hidden bg-brand-yellow">
-        {/* =====================================================
-            DESKTOP NAVY PANEL
-        ===================================================== */}
+      <section className="relative w-full overflow-hidden bg-brand-yellow pt-[82px]">
+        {/* =======================================================
+            BASE LAYER (YELLOW BACKGROUND)
+            Text on this layer is Brand Navy (#1E2B5B)
+        ======================================================= */}
+        <div className="relative z-10 mx-auto hidden min-h-[calc(100vh-82px)] w-full max-w-[1600px] flex-col px-6 pb-16 pt-6 sm:px-10 lg:flex lg:px-16">
+          {/* TOP: EYEBROW & FULL-WIDTH HEADLINE */}
+          <div>
+            <div className="flex items-center gap-3 sm:gap-4">
+              <span className="h-px w-8 shrink-0 bg-brand-navy sm:w-12" />
+              <span className="text-[9px] font-bold uppercase tracking-[0.28em] text-brand-navy sm:text-xs sm:tracking-[0.35em]">
+                Founder & Executive Coach
+              </span>
+            </div>
 
-        <motion.div
-          initial={{ opacity: 0, x: 70 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{
-            duration: 0.9,
-            ease: [0.22, 1, 0.36, 1],
-          }}
-          className="pointer-events-none absolute inset-y-0 right-0 hidden w-[56%] bg-brand-navy lg:block"
-          style={{
-            clipPath: "polygon(15% 0%, 100% 0%, 100% 100%, 0% 100%)",
-          }}
-        />
+            <h1 className="mt-4 font-display text-[2.8rem] font-medium leading-[0.9] tracking-[-0.035em] text-brand-navy sm:text-[3.8rem] lg:text-[4.6rem] xl:text-[5.6rem] 2xl:text-[6.4rem]">
+              Elevating Leadership <br />
+              <span className="inline-block text-brand-navy">Through Business Storytelling</span>
+            </h1>
+          </div>
 
-        {/* =====================================================
-            LARGE DECORATIVE CIRCLE
-        ===================================================== */}
+          {/* MIDDLE: 2-COLUMN GRID (DETAILS ON LEFT, SPACING FOR IMAGE ON RIGHT) */}
+          <div className="mt-6 grid w-full grid-cols-1 items-center gap-10 lg:grid-cols-[52%_48%] xl:mt-8">
+            {/* LEFT: TAGLINE, DESCRIPTION & BUTTONS */}
+            <div className="max-w-[620px]">
+              <p className="font-medium leading-snug text-brand-navy text-lg sm:text-xl xl:text-[1.35rem]">
+                Leadership. Communication. Transformation.
+              </p>
 
-        <div className="pointer-events-none absolute right-[-100px] top-[80px] hidden h-[520px] w-[520px] rounded-full border border-white/10 lg:block xl:right-[-60px] xl:h-[620px] xl:w-[620px]" />
+              <ul className="mt-4 space-y-2.5 text-[13px] sm:text-[14px] xl:text-[15px] font-medium leading-relaxed text-brand-navy/90">
+                <li className="flex items-start gap-2.5">
+                  <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-brand-navy" />
+                  <span>Workshops, Business and Data Storytelling</span>
+                </li>
+                <li className="flex items-start gap-2.5">
+                  <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-brand-navy" />
+                  <span>Design Thinking and Innovation</span>
+                </li>
+                <li className="flex items-start gap-2.5">
+                  <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-brand-navy" />
+                  <span>Strategy (Business)</span>
+                </li>
+                <li className="flex items-start gap-2.5">
+                  <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-brand-navy" />
+                  <span>Available for Workshops and Keynotes (Research for developing content)</span>
+                </li>
+              </ul>
 
-        <div className="pointer-events-none absolute right-[20px] top-[210px] hidden h-[300px] w-[300px] rounded-full border border-white/10 lg:block" />
+              <div className="mt-6 flex flex-wrap gap-3">
+                <Link
+                  to="/profile"
+                  className="group inline-flex min-h-[48px] items-center justify-center gap-2 bg-brand-navy px-6 py-3.5 text-xs font-bold uppercase tracking-[0.12em] text-white transition-all duration-300 hover:bg-brand-black"
+                >
+                  Explore Profile
+                  <ArrowRight
+                    size={16}
+                    className="transition-transform duration-300 group-hover:translate-x-1"
+                  />
+                </Link>
 
-        {/* =====================================================
-            DESKTOP HERO CONTENT
-        ===================================================== */}
-
-        <div className="relative z-10 mx-auto hidden min-h-screen w-full max-w-[1600px] pt-[82px] lg:flex">
-          <div className="grid w-full grid-cols-[53%_47%] items-center">
-            {/* =================================================
-                LEFT YELLOW SIDE
-            ================================================= */}
-
-            <div className="relative flex min-h-[680px] items-center px-10 py-16 xl:px-20 2xl:px-24">
-              <div className="w-full max-w-[700px]">
-                <HeroText desktop />
+                <Link
+                  to="/contact"
+                  className="inline-flex min-h-[48px] items-center justify-center border border-brand-navy/40 px-6 py-3.5 text-xs font-bold uppercase tracking-[0.12em] text-brand-navy transition-all duration-300 hover:bg-brand-navy hover:text-white"
+                >
+                  Start a Conversation
+                </Link>
               </div>
 
-              {/* Scroll */}
-
-              <div className="absolute bottom-7 left-1/2 flex -translate-x-1/2 flex-col items-center">
-                <span className="text-[9px] font-bold uppercase tracking-[0.35em] text-brand-black/50">
+              {/* SCROLL INDICATOR */}
+              <div className="mt-8 flex items-center gap-3">
+                <span className="text-[9px] font-bold uppercase tracking-[0.35em] text-brand-navy/60">
                   Scroll to explore
                 </span>
-
                 <motion.div
-                  animate={{ y: [0, 6, 0] }}
+                  animate={{ y: [0, 5, 0] }}
                   transition={{
                     duration: 1.5,
                     repeat: Infinity,
                   }}
-                  className="mt-3"
                 >
                   <ArrowDown
-                    size={18}
-                    className="text-brand-black/70"
+                    size={15}
+                    className="text-brand-navy/70"
                   />
                 </motion.div>
               </div>
             </div>
 
-            {/* =================================================
-                RIGHT NAVY SIDE
-            ================================================= */}
+            {/* RIGHT COLUMN SPACER FOR DESKTOP */}
+            <div className="hidden min-h-[460px] lg:block" />
+          </div>
+        </div>
 
-            <div className="relative flex min-h-[680px] items-center justify-center px-10 xl:px-16">
-              <HeroImage desktop />
+        {/* =======================================================
+            OVERLAY LAYER (NAVY PANEL WITH CLIP-PATH)
+            Text on this layer is Brand Yellow (#FFC20F)
+            The diagonal clip-path cuts seamlessly across the full-width headline!
+        ======================================================= */}
+        <div
+          className="pointer-events-none absolute inset-0 hidden min-h-[calc(100vh-82px)] w-full bg-brand-navy pt-[82px] lg:block"
+          style={{
+            clipPath: "polygon(50% 0%, 100% 0%, 100% 100%, 36% 100%)",
+          }}
+        >
+          {/* DECORATIVE CIRCLES */}
+          <div className="absolute right-[-80px] top-[100px] h-[520px] w-[520px] rounded-full border border-white/10" />
+          <div className="absolute right-[40px] top-[240px] h-[300px] w-[300px] rounded-full border border-white/10" />
+
+          {/* SYNCHRONIZED OVERLAY CONTENT */}
+          <div className="relative mx-auto flex min-h-[calc(100vh-82px)] w-full max-w-[1600px] flex-col px-6 pb-16 pt-6 sm:px-10 lg:px-16">
+            {/* TOP: EYEBROW & FULL-WIDTH HEADLINE (YELLOW ACCENT) */}
+            <div>
+              <div className="flex items-center gap-3 sm:gap-4">
+                <span className="h-px w-8 shrink-0 bg-brand-yellow sm:w-12" />
+                <span className="text-[9px] font-bold uppercase tracking-[0.28em] text-brand-yellow sm:text-xs sm:tracking-[0.35em]">
+                  Founder & Executive Coach
+                </span>
+              </div>
+
+              <h1 className="mt-4 font-display text-[2.8rem] font-medium leading-[0.9] tracking-[-0.035em] text-brand-yellow sm:text-[3.8rem] lg:text-[4.6rem] xl:text-[5.6rem] 2xl:text-[6.4rem]">
+                Elevating Leadership <br />
+                <span className="inline-block text-brand-yellow">Through Business Storytelling</span>
+              </h1>
+            </div>
+
+            {/* MIDDLE: 2-COLUMN GRID (IMAGE ON RIGHT) */}
+            <div className="mt-6 grid w-full grid-cols-1 items-center gap-10 lg:grid-cols-[52%_48%] xl:mt-8">
+              <div className="hidden lg:block">
+                {/* Scroll Indicator in Yellow */}
+                <div className="invisible mt-36 flex items-center gap-3">
+                  <span className="text-[9px] font-bold uppercase tracking-[0.35em] text-brand-yellow/60">
+                    Scroll to explore
+                  </span>
+                  <ArrowDown size={15} className="text-brand-yellow/70" />
+                </div>
+              </div>
+
+              {/* RIGHT: HERO IMAGE */}
+              <div className="pointer-events-auto flex items-center justify-center pr-4">
+                <HeroImage desktop />
+              </div>
             </div>
           </div>
         </div>
 
-        {/* =====================================================
+        {/* =======================================================
             MOBILE HERO
-        ===================================================== */}
+        ======================================================= */}
+        <div className="relative z-10 block w-full overflow-hidden lg:hidden">
+          {/* Yellow Content Section */}
+          <div className="w-full bg-brand-yellow px-5 pb-10 pt-6 sm:px-8 sm:pb-14 sm:pt-8">
+            <div className="flex items-center gap-3">
+              <span className="h-px w-8 bg-brand-navy" />
+              <span className="text-[9px] font-bold uppercase tracking-[0.25em] text-brand-navy sm:text-xs">
+                Founder & Executive Coach
+              </span>
+            </div>
 
-        <div className="relative z-10 block w-full pt-[82px] lg:hidden">
-          {/* Yellow content */}
+            <h1 className="mt-4 font-display text-[2.2rem] font-medium leading-[0.92] tracking-[-0.035em] text-brand-navy sm:text-[3.2rem]">
+              Elevating Leadership <br />
+              <span className="inline-block text-brand-navy">Through Business Storytelling</span>
+            </h1>
 
-          <div className="w-full bg-brand-yellow px-5 pb-12 pt-10 sm:px-8 sm:pb-16 sm:pt-12">
-            <HeroText mobile />
+            <p className="mt-4 text-[15px] font-medium leading-snug text-brand-navy sm:text-lg">
+              Leadership. Communication. Transformation.
+            </p>
+
+            <ul className="mt-3.5 space-y-2 text-[13px] font-medium leading-relaxed text-brand-navy/90 sm:text-[14px]">
+              <li className="flex items-start gap-2.5">
+                <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-brand-navy" />
+                <span>Workshops, Business and Data Storytelling</span>
+              </li>
+              <li className="flex items-start gap-2.5">
+                <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-brand-navy" />
+                <span>Design Thinking and Innovation</span>
+              </li>
+              <li className="flex items-start gap-2.5">
+                <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-brand-navy" />
+                <span>Strategy (Business)</span>
+              </li>
+              <li className="flex items-start gap-2.5">
+                <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-brand-navy" />
+                <span>Available for Workshops and Keynotes (Research for developing content)</span>
+              </li>
+            </ul>
+
+            <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:items-center">
+              <Link
+                to="/profile"
+                className="inline-flex min-h-[48px] w-full items-center justify-center gap-2 bg-brand-navy px-6 py-3.5 text-xs font-bold uppercase tracking-[0.12em] text-white transition-all duration-300 active:scale-[0.99] sm:w-auto"
+              >
+                Explore Profile
+                <ArrowRight size={15} />
+              </Link>
+              <Link
+                to="/contact"
+                className="inline-flex min-h-[48px] w-full items-center justify-center border border-brand-navy/40 px-6 py-3.5 text-xs font-bold uppercase tracking-[0.12em] text-brand-navy transition-all duration-300 active:scale-[0.99] sm:w-auto"
+              >
+                Start a Conversation
+              </Link>
+            </div>
           </div>
 
-          {/* Navy image */}
+          {/* Navy Image Section */}
+          <div className="relative w-full overflow-hidden bg-brand-navy px-5 pb-14 pt-10 sm:px-8 sm:pb-16 sm:pt-12">
+            {/* Mobile Decorative Circles */}
+            <div className="pointer-events-none absolute -right-20 -top-20 h-[300px] w-[300px] rounded-full border border-white/10" />
+            <div className="pointer-events-none absolute -bottom-10 -left-10 h-[200px] w-[200px] rounded-full border border-white/5" />
 
-          <div className="w-full bg-brand-navy px-5 pb-16 pt-14 sm:px-8 sm:pb-20 sm:pt-16">
-            <HeroImage mobile />
+            <div className="relative z-10 mx-auto max-w-[420px]">
+              <HeroImage mobile />
+            </div>
           </div>
         </div>
       </section>
@@ -580,198 +703,6 @@ export default function Home() {
 }
 
 /* =============================================================
-   HERO TEXT
-============================================================= */
-
-function HeroText({ mobile = false }) {
-  return (
-    <div className="relative z-20 min-w-0">
-      {/* EYEBROW */}
-
-      <motion.div
-        initial={{ opacity: 0, x: -20 }}
-        animate={{ opacity: 1, x: 0 }}
-        transition={{ duration: 0.7 }}
-        className="flex items-center gap-3 sm:gap-4"
-      >
-        <span className="h-px w-8 shrink-0 bg-brand-black sm:w-12" />
-
-        <span className="text-[9px] font-bold uppercase tracking-[0.28em] text-brand-black sm:text-xs sm:tracking-[0.35em]">
-          Founder & Executive Coach
-        </span>
-      </motion.div>
-
-      {/* NAME */}
-
-      <motion.h1
-        initial={{ opacity: 0, y: 25 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{
-          duration: 0.9,
-          delay: 0.15,
-          ease: [0.22, 1, 0.36, 1],
-        }}
-        className={`
-          mt-6
-          font-display
-          font-medium
-          leading-[0.86]
-          tracking-[-0.045em]
-          text-brand-black
-          ${
-            mobile
-              ? "text-[3.65rem] sm:text-[5rem]"
-              : "text-[5.3rem] xl:text-[6.5rem] 2xl:text-[7rem]"
-          }
-        `}
-      >
-        Elevating Leadership Through
-
-        <span className="block text-brand-navy">
-           Business Storytelling
-        </span>
-      </motion.h1>
-
-      {/* TAGLINE */}
-
-      <motion.p
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{
-          duration: 0.8,
-          delay: 0.35,
-        }}
-        className={`
-          mt-6
-          font-medium
-          leading-snug
-          text-brand-black
-          ${
-            mobile
-              ? "text-[15px] sm:text-xl"
-              : "text-xl xl:text-[1.45rem]"
-          }
-        `}
-      >
-        Leadership.
-        <span className="text-brand-navy">
-          {" "}
-          Communication.
-        </span>{" "}
-        Transformation.
-      </motion.p>
-
-      {/* DESCRIPTION */}
-
-      <motion.p
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{
-          duration: 0.8,
-          delay: 0.45,
-        }}
-        className={`
-          max-w-[650px]
-          text-brand-black/70
-          ${
-            mobile
-              ? "mt-4 text-[13px] leading-6 sm:text-base sm:leading-7"
-              : "mt-6 text-[15px] leading-7 xl:text-base xl:leading-8"
-          }
-        `}
-      >
-        Executive coaching, behavioural development and leadership
-        communication designed to help professionals think with clarity,
-        communicate with purpose and create meaningful impact.
-      </motion.p>
-
-      {/* BUTTONS */}
-
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{
-          duration: 0.8,
-          delay: 0.6,
-        }}
-        className={`
-          mt-7
-          flex
-          w-full
-          gap-3
-          ${
-            mobile
-              ? "flex-col sm:flex-row"
-              : "flex-col sm:flex-row"
-          }
-        `}
-      >
-        <Link
-          to="/profile"
-          className="
-            group
-            inline-flex
-            min-h-[50px]
-            w-full
-            items-center
-            justify-center
-            gap-2
-            bg-brand-navy
-            px-6
-            py-4
-            text-[10px]
-            font-bold
-            uppercase
-            tracking-[0.12em]
-            text-white
-            transition-all
-            duration-300
-            hover:bg-brand-black
-            sm:w-auto
-            sm:text-xs
-          "
-        >
-          Explore Profile
-
-          <ArrowRight
-            size={16}
-            className="transition-transform duration-300 group-hover:translate-x-1"
-          />
-        </Link>
-
-        <Link
-          to="/contact"
-          className="
-            inline-flex
-            min-h-[50px]
-            w-full
-            items-center
-            justify-center
-            border
-            border-brand-black/30
-            px-6
-            py-4
-            text-[10px]
-            font-bold
-            uppercase
-            tracking-[0.12em]
-            text-brand-black
-            transition-all
-            duration-300
-            hover:bg-brand-black
-            hover:text-white
-            sm:w-auto
-            sm:text-xs
-          "
-        >
-          Start a Conversation
-        </Link>
-      </motion.div>
-    </div>
-  );
-}
-
-/* =============================================================
    HERO IMAGE
 ============================================================= */
 
@@ -798,11 +729,14 @@ function HeroImage({ mobile = false }) {
         mx-auto
         w-full
         min-w-0
-        ${mobile ? "max-w-[390px]" : "max-w-[520px]"}
+        ${
+          mobile
+            ? "max-w-[340px] sm:max-w-[390px] mb-4"
+            : "max-w-[460px] xl:max-w-[500px] mb-6"
+        }
       `}
     >
       {/* OUTER YELLOW FRAME */}
-
       <div
         className={`
           pointer-events-none
@@ -814,14 +748,13 @@ function HeroImage({ mobile = false }) {
           ${
             mobile
               ? "-bottom-3 -left-3"
-              : "-bottom-5 -left-5"
+              : "-bottom-4 -left-4"
           }
         `}
       />
 
       {/* IMAGE */}
-
-      <div className="relative w-full overflow-hidden bg-white">
+      <div className="relative w-full overflow-hidden bg-white shadow-2xl">
         <img
           src="/hero.png"
           alt="R.A. Nadesan"
@@ -832,70 +765,26 @@ function HeroImage({ mobile = false }) {
             object-top
             ${
               mobile
-                ? "h-[410px] sm:h-[500px]"
-                : "h-[550px] xl:h-[600px]"
+                ? "h-[380px] sm:h-[440px]"
+                : "h-[450px] xl:h-[490px]"
             }
           `}
         />
 
-        {/* GRADIENT */}
-
-        <div className="absolute inset-x-0 bottom-0 h-[40%] bg-gradient-to-t from-brand-navy via-brand-navy/70 to-transparent" />
+        {/* SUBTLE GRADIENT */}
+        <div className="absolute inset-x-0 bottom-0 h-[28%] bg-gradient-to-t from-brand-navy/90 via-brand-navy/60 to-transparent" />
 
         {/* IMAGE CAPTION */}
-
-        <div className="absolute bottom-0 left-0 right-0 p-5 sm:p-7">
+        <div className="absolute bottom-0 left-0 right-0 p-4 sm:p-6">
           <p className="text-[9px] font-bold uppercase tracking-[0.18em] text-brand-yellow sm:text-xs sm:tracking-[0.22em]">
             R.A. Nadesan
           </p>
 
-          <p className="mt-1 font-display text-[14px] leading-tight text-white sm:mt-2 sm:text-md">
-          Util the Lion learns to write, every story will glorify the hunter
+          <p className="mt-1 font-display text-[13px] leading-snug text-white sm:text-[15px]">
+            Until the lion learns to write, every story will glorify the hunter.
           </p>
         </div>
-
-        {/* ===================================================
-            FLOATING BADGE
-        =================================================== */}
-
-        {/* <motion.div
-          animate={{
-            y: [0, -6, 0],
-          }}
-          transition={{
-            duration: 4,
-            repeat: Infinity,
-            ease: "easeInOut",
-          }}
-          className="
-            absolute
-            right-3
-            top-4
-            w-[105px]
-            bg-brand-yellow
-            p-3
-            shadow-xl
-            sm:right-5
-            sm:top-7
-            sm:w-[130px]
-            sm:p-4
-          "
-        >
-          <Award
-            size={21}
-            className="text-brand-black sm:h-6 sm:w-6"
-          />
-
-          <p className="mt-2 text-[8px] font-bold uppercase tracking-[0.13em] text-brand-black sm:mt-3 sm:text-[10px]">
-            Executive
-          </p>
-
-          <p className="text-[8px] uppercase tracking-[0.13em] text-brand-black/60 sm:text-[10px]">
-            Coaching
-          </p>
-        </motion.div> */}
       </div>
-      
     </motion.div>
   );
 }
