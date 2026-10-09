@@ -51,14 +51,6 @@ export default function Home() {
   return (
     <main className="w-full max-w-full overflow-x-hidden bg-brand-ivory text-brand-black">
       {/* =========================================================
-          NAVBAR GAP
-          Navbar is fixed, so this creates REAL visible space
-          underneath it.
-      ========================================================= */}
-
-      <div className="h-[82px] bg-brand-ivory sm:h-[88px] lg:h-[112px]" />
-
-      {/* =========================================================
           HERO
       ========================================================= */}
 
@@ -92,7 +84,7 @@ export default function Home() {
             DESKTOP HERO CONTENT
         ===================================================== */}
 
-        <div className="relative z-10 mx-auto hidden min-h-[calc(100svh-112px)] w-full max-w-[1600px] lg:flex">
+        <div className="relative z-10 mx-auto hidden min-h-screen w-full max-w-[1600px] pt-[82px] lg:flex">
           <div className="grid w-full grid-cols-[53%_47%] items-center">
             {/* =================================================
                 LEFT YELLOW SIDE
@@ -140,7 +132,7 @@ export default function Home() {
             MOBILE HERO
         ===================================================== */}
 
-        <div className="relative z-10 block w-full lg:hidden">
+        <div className="relative z-10 block w-full pt-[82px] lg:hidden">
           {/* Yellow content */}
 
           <div className="w-full bg-brand-yellow px-5 pb-12 pt-10 sm:px-8 sm:pb-16 sm:pt-12">
@@ -159,7 +151,7 @@ export default function Home() {
           INTRODUCTION
       ========================================================= */}
 
-      <section className="w-full bg-brand-ivory py-16 sm:py-24 lg:py-32">
+      {/* <section className="w-full bg-brand-ivory py-16 sm:py-24 lg:py-32">
         <div className="mx-auto w-full max-w-7xl px-5 sm:px-8 lg:px-12">
           <div className="grid min-w-0 gap-10 lg:grid-cols-[0.8fr_1.2fr] lg:gap-24">
             <Reveal direction="left">
@@ -206,13 +198,13 @@ export default function Home() {
             </Reveal>
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* =========================================================
           AREAS OF EXPERTISE
       ========================================================= */}
 
-      <section className="w-full bg-white py-16 sm:py-24 lg:py-32">
+      {/* <section className="w-full bg-white py-16 sm:py-24 lg:py-32">
         <div className="mx-auto w-full max-w-7xl px-5 sm:px-8 lg:px-12">
           <Reveal>
             <div className="max-w-2xl">
@@ -266,12 +258,12 @@ export default function Home() {
             })}
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* =========================================================
           LEADERSHIP COMMUNICATION
       ========================================================= */}
-
+{/* 
       <section className="relative w-full overflow-hidden bg-brand-navy py-16 sm:py-24 lg:py-32">
         <div className="pointer-events-none absolute -right-40 top-1/2 hidden h-[520px] w-[520px] -translate-y-1/2 rounded-full border border-white/10 lg:block" />
 
@@ -337,13 +329,13 @@ export default function Home() {
             </Reveal>
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* =========================================================
           FOCUS STRIP
       ========================================================= */}
 
-      <section className="w-full bg-brand-yellow py-12 sm:py-16">
+      {/* <section className="w-full bg-brand-yellow py-12 sm:py-16">
         <div className="mx-auto w-full max-w-7xl px-5 sm:px-8 lg:px-12">
           <div className="grid grid-cols-2 lg:grid-cols-4">
             {focusAreas.map((item, index) => (
@@ -379,13 +371,13 @@ export default function Home() {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* =========================================================
           WORKSHOP
       ========================================================= */}
 
-      <section className="w-full bg-brand-ivory py-16 sm:py-24 lg:py-32">
+      {/* <section className="w-full bg-brand-ivory py-16 sm:py-24 lg:py-32">
         <div className="mx-auto w-full max-w-7xl px-5 sm:px-8 lg:px-12">
           <div className="grid items-center gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:gap-16">
             <Reveal direction="left">
@@ -445,13 +437,13 @@ export default function Home() {
             </Reveal>
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* =========================================================
           PORTFOLIO
       ========================================================= */}
 
-      <section className="w-full bg-white py-16 sm:py-24 lg:py-32">
+      {/* <section className="w-full bg-white py-16 sm:py-24 lg:py-32">
         <div className="mx-auto w-full max-w-7xl px-5 sm:px-8 lg:px-12">
           <Reveal>
             <div className="flex flex-col gap-5 md:flex-row md:items-end md:justify-between">
@@ -537,12 +529,12 @@ export default function Home() {
             </div>
           </Reveal>
         </div>
-      </section>
+      </section> */}
 
       {/* =========================================================
           FINAL CTA
       ========================================================= */}
-
+{/* 
       <section className="relative w-full overflow-hidden bg-brand-navy py-16 sm:py-24 lg:py-32">
         <div className="pointer-events-none absolute -right-40 -top-40 h-[420px] w-[420px] rounded-full bg-brand-yellow/10" />
 
@@ -582,7 +574,7 @@ export default function Home() {
             </Link>
           </Reveal>
         </div>
-      </section>
+      </section> */}
     </main>
   );
 }
@@ -605,7 +597,7 @@ function HeroText({ mobile = false }) {
         <span className="h-px w-8 shrink-0 bg-brand-black sm:w-12" />
 
         <span className="text-[9px] font-bold uppercase tracking-[0.28em] text-brand-black sm:text-xs sm:tracking-[0.35em]">
-          Executive Coach
+          Founder & Executive Coach
         </span>
       </motion.div>
 
@@ -633,10 +625,10 @@ function HeroText({ mobile = false }) {
           }
         `}
       >
-        R.A.
+        Elevating Leadership Through
 
         <span className="block text-brand-navy">
-          Nadesan
+           Business Storytelling
         </span>
       </motion.h1>
 
@@ -831,7 +823,7 @@ function HeroImage({ mobile = false }) {
 
       <div className="relative w-full overflow-hidden bg-white">
         <img
-          src="/profile.jpg"
+          src="/hero.png"
           alt="R.A. Nadesan"
           className={`
             block
@@ -854,11 +846,11 @@ function HeroImage({ mobile = false }) {
 
         <div className="absolute bottom-0 left-0 right-0 p-5 sm:p-7">
           <p className="text-[9px] font-bold uppercase tracking-[0.18em] text-brand-yellow sm:text-xs sm:tracking-[0.22em]">
-            Leadership & Development
+            R.A. Nadesan
           </p>
 
-          <p className="mt-1 font-display text-[1.3rem] leading-tight text-white sm:mt-2 sm:text-3xl">
-            Think. Communicate. Lead.
+          <p className="mt-1 font-display text-[14px] leading-tight text-white sm:mt-2 sm:text-md">
+          Util the Lion learns to write, every story will glorify the hunter
           </p>
         </div>
 
@@ -866,7 +858,7 @@ function HeroImage({ mobile = false }) {
             FLOATING BADGE
         =================================================== */}
 
-        <motion.div
+        {/* <motion.div
           animate={{
             y: [0, -6, 0],
           }}
@@ -901,8 +893,9 @@ function HeroImage({ mobile = false }) {
           <p className="text-[8px] uppercase tracking-[0.13em] text-brand-black/60 sm:text-[10px]">
             Coaching
           </p>
-        </motion.div>
+        </motion.div> */}
       </div>
+      
     </motion.div>
   );
 }

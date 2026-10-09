@@ -217,7 +217,7 @@ export default function Profile() {
 
                 <div className="relative w-full overflow-hidden bg-brand-midnight">
                   <img
-                    src="/profile.jpg"
+                    src="/hero.png"
                     alt="R.A. Nadesan"
                     className="block h-[430px] w-full object-cover object-top grayscale-[8%] transition duration-700 hover:scale-105 sm:h-[560px]"
                   />

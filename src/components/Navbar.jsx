@@ -27,8 +27,8 @@ export default function Navbar() {
 
           {/* Logo */}
           <Link to="/" className="text-xl md:text-2xl font-bold">
-            <span className="text-white">R.A.</span>
-            <span className="text-[#FDC210] ml-2">NADESAN</span>
+            <span className="text-white">The</span>
+            <span className="text-[#FDC210] ml-2">Narrative Edge</span>
           </Link>
 
           {/* Desktop Navigation */}
