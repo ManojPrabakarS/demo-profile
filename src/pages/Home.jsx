@@ -57,146 +57,28 @@ export default function Home() {
       <section className="relative w-full overflow-hidden bg-brand-yellow pt-[82px]">
         {/* =======================================================
             BASE LAYER (YELLOW BACKGROUND)
-            Text on this layer is Brand Navy (#1E2B5B)
+            Renders Brand Navy text on Yellow background
         ======================================================= */}
-        <div className="relative z-10 mx-auto hidden min-h-[calc(100vh-82px)] w-full max-w-[1600px] flex-col px-6 pb-16 pt-6 sm:px-10 lg:flex lg:px-16">
-          {/* TOP: EYEBROW & FULL-WIDTH HEADLINE */}
-          <div>
-            <div className="flex items-center gap-3 sm:gap-4">
-              <span className="h-px w-8 shrink-0 bg-brand-navy sm:w-12" />
-              <span className="text-[9px] font-bold uppercase tracking-[0.28em] text-brand-navy sm:text-xs sm:tracking-[0.35em]">
-                Founder & Executive Coach
-              </span>
-            </div>
-
-            <h1 className="mt-4 font-display text-[2.8rem] font-medium leading-[0.9] tracking-[-0.035em] text-brand-navy sm:text-[3.8rem] lg:text-[4.6rem] xl:text-[5.6rem] 2xl:text-[6.4rem]">
-              Elevating Leadership <br />
-              <span className="inline-block text-brand-navy">Through Business Storytelling</span>
-            </h1>
-          </div>
-
-          {/* MIDDLE: 2-COLUMN GRID (DETAILS ON LEFT, SPACING FOR IMAGE ON RIGHT) */}
-          <div className="mt-6 grid w-full grid-cols-1 items-center gap-10 lg:grid-cols-[52%_48%] xl:mt-8">
-            {/* LEFT: TAGLINE, DESCRIPTION & BUTTONS */}
-            <div className="max-w-[620px]">
-              <p className="font-medium leading-snug text-brand-navy text-lg sm:text-xl xl:text-[1.35rem]">
-                Leadership. Communication. Transformation.
-              </p>
-
-              <ul className="mt-4 space-y-2.5 text-[13px] sm:text-[14px] xl:text-[15px] font-medium leading-relaxed text-brand-navy/90">
-                <li className="flex items-start gap-2.5">
-                  <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-brand-navy" />
-                  <span>Workshops, Business and Data Storytelling</span>
-                </li>
-                <li className="flex items-start gap-2.5">
-                  <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-brand-navy" />
-                  <span>Design Thinking and Innovation</span>
-                </li>
-                <li className="flex items-start gap-2.5">
-                  <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-brand-navy" />
-                  <span>Strategy (Business)</span>
-                </li>
-                <li className="flex items-start gap-2.5">
-                  <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-brand-navy" />
-                  <span>Available for Workshops and Keynotes (Research for developing content)</span>
-                </li>
-              </ul>
-
-              <div className="mt-6 flex flex-wrap gap-3">
-                <Link
-                  to="/profile"
-                  className="group inline-flex min-h-[48px] items-center justify-center gap-2 bg-brand-navy px-6 py-3.5 text-xs font-bold uppercase tracking-[0.12em] text-white transition-all duration-300 hover:bg-brand-black"
-                >
-                  Explore Profile
-                  <ArrowRight
-                    size={16}
-                    className="transition-transform duration-300 group-hover:translate-x-1"
-                  />
-                </Link>
-
-                <Link
-                  to="/contact"
-                  className="inline-flex min-h-[48px] items-center justify-center border border-brand-navy/40 px-6 py-3.5 text-xs font-bold uppercase tracking-[0.12em] text-brand-navy transition-all duration-300 hover:bg-brand-navy hover:text-white"
-                >
-                  Start a Conversation
-                </Link>
-              </div>
-
-              {/* SCROLL INDICATOR */}
-              <div className="mt-8 flex items-center gap-3">
-                <span className="text-[9px] font-bold uppercase tracking-[0.35em] text-brand-navy/60">
-                  Scroll to explore
-                </span>
-                <motion.div
-                  animate={{ y: [0, 5, 0] }}
-                  transition={{
-                    duration: 1.5,
-                    repeat: Infinity,
-                  }}
-                >
-                  <ArrowDown
-                    size={15}
-                    className="text-brand-navy/70"
-                  />
-                </motion.div>
-              </div>
-            </div>
-
-            {/* RIGHT COLUMN SPACER FOR DESKTOP */}
-            <div className="hidden min-h-[460px] lg:block" />
-          </div>
+        <div className="relative z-10 hidden w-full lg:block">
+          <HeroDesktopLayout theme="yellow" />
         </div>
 
         {/* =======================================================
-            OVERLAY LAYER (NAVY PANEL WITH CLIP-PATH)
-            Text on this layer is Brand Yellow (#FFC20F)
-            The diagonal clip-path cuts seamlessly across the full-width headline!
+            OVERLAY LAYER (NAVY BACKGROUND WITH UNIFIED CLIP-PATH)
+            Renders Brand Yellow text on Navy background
+            The clip-path clips both background and text simultaneously!
         ======================================================= */}
         <div
-          className="pointer-events-none absolute inset-0 hidden min-h-[calc(100vh-82px)] w-full bg-brand-navy pt-[82px] lg:block"
+          className="pointer-events-none absolute inset-0 z-20 hidden w-full h-full bg-brand-navy pt-[82px] lg:block"
           style={{
-            clipPath: "polygon(50% 0%, 100% 0%, 100% 100%, 36% 100%)",
+            clipPath: "polygon(50% 0%, 100% 0%, 100% 100%, 35% 100%)",
           }}
         >
-          {/* DECORATIVE CIRCLES */}
+          {/* Decorative circles inside navy panel */}
           <div className="absolute right-[-80px] top-[100px] h-[520px] w-[520px] rounded-full border border-white/10" />
           <div className="absolute right-[40px] top-[240px] h-[300px] w-[300px] rounded-full border border-white/10" />
 
-          {/* SYNCHRONIZED OVERLAY CONTENT */}
-          <div className="relative mx-auto flex min-h-[calc(100vh-82px)] w-full max-w-[1600px] flex-col px-6 pb-16 pt-6 sm:px-10 lg:px-16">
-            {/* TOP: EYEBROW & FULL-WIDTH HEADLINE (YELLOW ACCENT) */}
-            <div>
-              <div className="flex items-center gap-3 sm:gap-4">
-                <span className="h-px w-8 shrink-0 bg-brand-yellow sm:w-12" />
-                <span className="text-[9px] font-bold uppercase tracking-[0.28em] text-brand-yellow sm:text-xs sm:tracking-[0.35em]">
-                  Founder & Executive Coach
-                </span>
-              </div>
-
-              <h1 className="mt-4 font-display text-[2.8rem] font-medium leading-[0.9] tracking-[-0.035em] text-brand-yellow sm:text-[3.8rem] lg:text-[4.6rem] xl:text-[5.6rem] 2xl:text-[6.4rem]">
-                Elevating Leadership <br />
-                <span className="inline-block text-brand-yellow">Through Business Storytelling</span>
-              </h1>
-            </div>
-
-            {/* MIDDLE: 2-COLUMN GRID (IMAGE ON RIGHT) */}
-            <div className="mt-6 grid w-full grid-cols-1 items-center gap-10 lg:grid-cols-[52%_48%] xl:mt-8">
-              <div className="hidden lg:block">
-                {/* Scroll Indicator in Yellow */}
-                <div className="invisible mt-36 flex items-center gap-3">
-                  <span className="text-[9px] font-bold uppercase tracking-[0.35em] text-brand-yellow/60">
-                    Scroll to explore
-                  </span>
-                  <ArrowDown size={15} className="text-brand-yellow/70" />
-                </div>
-              </div>
-
-              {/* RIGHT: HERO IMAGE */}
-              <div className="pointer-events-auto flex items-center justify-center pr-4">
-                <HeroImage desktop />
-              </div>
-            </div>
-          </div>
+          <HeroDesktopLayout theme="navy" />
         </div>
 
         {/* =======================================================
@@ -212,7 +94,7 @@ export default function Home() {
               </span>
             </div>
 
-            <h1 className="mt-4 font-display text-[2.2rem] font-medium leading-[0.92] tracking-[-0.035em] text-brand-navy sm:text-[3.2rem]">
+            <h1 className="mt-4 font-display text-[2.2rem] font-bold leading-[0.92] tracking-[-0.035em] text-brand-navy sm:text-[3.2rem]">
               Elevating Leadership <br />
               <span className="inline-block text-brand-navy">Through Business Storytelling</span>
             </h1>
@@ -699,6 +581,153 @@ export default function Home() {
         </div>
       </section> */}
     </main>
+  );
+}
+
+/* =============================================================
+   HERO DESKTOP LAYOUT (DUAL-COLOR SYNCHRONIZED COMPONENT)
+============================================================= */
+
+function HeroDesktopLayout({ theme = "yellow" }) {
+  const isNavy = theme === "navy";
+
+  return (
+    <div className="mx-auto flex min-h-[calc(100vh-82px)] w-full max-w-[1600px] flex-col px-6 pb-16 pt-6 sm:px-10 lg:flex lg:px-16">
+      {/* EYEBROW */}
+      <div className="flex items-center gap-3 sm:gap-4">
+        <span
+          className={`h-px w-8 shrink-0 sm:w-12 ${
+            isNavy ? "bg-brand-yellow" : "bg-brand-navy"
+          }`}
+        />
+        <span
+          className={`text-[9px] font-bold uppercase tracking-[0.28em] sm:text-xs sm:tracking-[0.35em] ${
+            isNavy ? "text-brand-yellow" : "text-brand-navy"
+          }`}
+        >
+          Founder & Executive Coach
+        </span>
+      </div>
+
+      {/* HEADLINE */}
+      <h1
+        className={`mt-4 font-display text-[2.8rem] font-bold leading-[0.9] tracking-[-0.035em] sm:text-[3.8rem] lg:text-[4.6rem] xl:text-[5.6rem] 2xl:text-[6.4rem] ${
+          isNavy ? "text-brand-yellow" : "text-brand-navy"
+        }`}
+      >
+        Elevating Leadership <br />
+        <span className="inline-block">Through Business Storytelling</span>
+      </h1>
+
+      {/* MIDDLE: 2-COLUMN GRID (DETAILS ON LEFT, IMAGE ON RIGHT) */}
+      <div className="mt-6 grid w-full grid-cols-1 items-center gap-10 lg:grid-cols-[52%_48%] xl:mt-8">
+        {/* LEFT: TAGLINE, BULLET POINTS & BUTTONS */}
+        <div className="max-w-[620px]">
+          <p
+            className={`font-medium leading-snug text-lg sm:text-xl xl:text-[1.35rem] ${
+              isNavy ? "text-brand-yellow" : "text-brand-navy"
+            }`}
+          >
+            Leadership. Communication. Transformation.
+          </p>
+
+          <ul
+            className={`mt-4 space-y-2.5 text-[13px] sm:text-[14px] xl:text-[15px] font-medium leading-relaxed ${
+              isNavy ? "text-brand-yellow/90" : "text-brand-navy/90"
+            }`}
+          >
+            <li className="flex items-start gap-2.5">
+              <span
+                className={`mt-2 h-1.5 w-1.5 shrink-0 rounded-full ${
+                  isNavy ? "bg-brand-yellow" : "bg-brand-navy"
+                }`}
+              />
+              <span>Workshops, Business and Data Storytelling</span>
+            </li>
+            <li className="flex items-start gap-2.5">
+              <span
+                className={`mt-2 h-1.5 w-1.5 shrink-0 rounded-full ${
+                  isNavy ? "bg-brand-yellow" : "bg-brand-navy"
+                }`}
+              />
+              <span>Design Thinking and Innovation</span>
+            </li>
+            <li className="flex items-start gap-2.5">
+              <span
+                className={`mt-2 h-1.5 w-1.5 shrink-0 rounded-full ${
+                  isNavy ? "bg-brand-yellow" : "bg-brand-navy"
+                }`}
+              />
+              <span>Strategy (Business)</span>
+            </li>
+            <li className="flex items-start gap-2.5">
+              <span
+                className={`mt-2 h-1.5 w-1.5 shrink-0 rounded-full ${
+                  isNavy ? "bg-brand-yellow" : "bg-brand-navy"
+                }`}
+              />
+              <span>Available for Workshops and Keynotes (Research for developing content)</span>
+            </li>
+          </ul>
+
+          <div className="mt-6 flex flex-wrap gap-3">
+            <Link
+              to="/profile"
+              className={`group inline-flex min-h-[48px] items-center justify-center gap-2 px-6 py-3.5 text-xs font-bold uppercase tracking-[0.12em] transition-all duration-300 ${
+                isNavy
+                  ? "bg-brand-yellow text-brand-black hover:bg-white"
+                  : "bg-brand-navy text-white hover:bg-brand-black"
+              }`}
+            >
+              Explore Profile
+              <ArrowRight
+                size={16}
+                className="transition-transform duration-300 group-hover:translate-x-1"
+              />
+            </Link>
+
+            <Link
+              to="/contact"
+              className={`inline-flex min-h-[48px] items-center justify-center border px-6 py-3.5 text-xs font-bold uppercase tracking-[0.12em] transition-all duration-300 ${
+                isNavy
+                  ? "border-brand-yellow/50 text-brand-yellow hover:bg-brand-yellow hover:text-brand-black"
+                  : "border-brand-navy/40 text-brand-navy hover:bg-brand-navy hover:text-white"
+              }`}
+            >
+              Start a Conversation
+            </Link>
+          </div>
+
+          {/* SCROLL INDICATOR */}
+          <div className="mt-8 flex items-center gap-3">
+            <span
+              className={`text-[9px] font-bold uppercase tracking-[0.35em] ${
+                isNavy ? "text-brand-yellow/60" : "text-brand-navy/60"
+              }`}
+            >
+              Scroll to explore
+            </span>
+            <motion.div
+              animate={{ y: [0, 5, 0] }}
+              transition={{
+                duration: 1.5,
+                repeat: Infinity,
+              }}
+            >
+              <ArrowDown
+                size={15}
+                className={isNavy ? "text-brand-yellow/70" : "text-brand-navy/70"}
+              />
+            </motion.div>
+          </div>
+        </div>
+
+        {/* RIGHT: HERO IMAGE */}
+        <div className="flex items-center justify-center pr-4">
+          <HeroImage desktop />
+        </div>
+      </div>
+    </div>
   );
 }
 
