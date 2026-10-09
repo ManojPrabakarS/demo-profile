@@ -86,20 +86,20 @@ export default function Home() {
         ======================================================= */}
         <div className="relative z-10 block w-full overflow-hidden lg:hidden">
           {/* Yellow Content Section */}
-          <div className="w-full bg-brand-yellow px-5 pb-10 pt-6 sm:px-8 sm:pb-14 sm:pt-8">
-            <div className="flex items-center gap-3">
+          <div className="w-full bg-brand-yellow px-5 pb-8 pt-4 sm:px-8 sm:pb-12 sm:pt-6">
+            {/* <div className="flex items-center gap-3">
               <span className="h-px w-8 bg-brand-navy" />
               <span className="text-[9px] font-bold uppercase tracking-[0.25em] text-brand-navy sm:text-xs">
                 Founder & Executive Coach
               </span>
-            </div>
+            </div> */}
 
-            <h1 className="mt-4 font-display text-[2.2rem] font-bold leading-[0.92] tracking-[-0.035em] text-brand-navy sm:text-[3.2rem]">
+            <h1 className="mt-2.5 font-display text-[2.2rem] font-bold leading-[0.92] tracking-[-0.035em] text-brand-navy sm:text-[3.2rem]">
               Elevating Leadership <br />
               <span className="inline-block text-brand-navy">Through Business Storytelling</span>
             </h1>
 
-            <p className="mt-4 text-[15px] font-medium leading-snug text-brand-navy sm:text-lg">
+            <p className="mt-3 text-[15px] font-medium leading-snug text-brand-navy sm:text-lg">
               Leadership. Communication. Transformation.
             </p>
 
@@ -122,17 +122,17 @@ export default function Home() {
               </li>
             </ul>
 
-            <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:items-center">
+            <div className="mt-5 flex flex-col gap-2.5 sm:flex-row sm:items-center">
               <Link
                 to="/profile"
-                className="inline-flex min-h-[48px] w-full items-center justify-center gap-2 bg-brand-navy px-6 py-3.5 text-xs font-bold uppercase tracking-[0.12em] text-white transition-all duration-300 active:scale-[0.99] sm:w-auto"
+                className="inline-flex min-h-[42px] w-full items-center justify-center gap-2 bg-brand-navy px-5 py-2.5 text-xs font-bold uppercase tracking-[0.1em] text-white transition-all duration-300 active:scale-[0.99] sm:w-auto"
               >
                 Explore Profile
-                <ArrowRight size={15} />
+                <ArrowRight size={14} />
               </Link>
               <Link
                 to="/contact"
-                className="inline-flex min-h-[48px] w-full items-center justify-center border border-brand-navy/40 px-6 py-3.5 text-xs font-bold uppercase tracking-[0.12em] text-brand-navy transition-all duration-300 active:scale-[0.99] sm:w-auto"
+                className="inline-flex min-h-[42px] w-full items-center justify-center border border-brand-navy/40 px-5 py-2.5 text-xs font-bold uppercase tracking-[0.1em] text-brand-navy transition-all duration-300 active:scale-[0.99] sm:w-auto"
               >
                 Start a Conversation
               </Link>
@@ -592,9 +592,9 @@ function HeroDesktopLayout({ theme = "yellow" }) {
   const isNavy = theme === "navy";
 
   return (
-    <div className="mx-auto flex min-h-[calc(100vh-82px)] w-full max-w-[1600px] flex-col px-6 pb-16 pt-6 sm:px-10 lg:flex lg:px-16">
+    <div className="mx-auto flex min-h-[calc(100vh-82px)] w-full max-w-[1600px] flex-col px-6 pb-10 pt-3 sm:px-10 lg:flex lg:px-16">
       {/* EYEBROW */}
-      <div className="flex items-center gap-3 sm:gap-4">
+      {/* <div className="flex items-center gap-3 sm:gap-4">
         <span
           className={`h-px w-8 shrink-0 sm:w-12 ${
             isNavy ? "bg-brand-yellow" : "bg-brand-navy"
@@ -607,11 +607,11 @@ function HeroDesktopLayout({ theme = "yellow" }) {
         >
           Founder & Executive Coach
         </span>
-      </div>
+      </div> */}
 
       {/* HEADLINE */}
       <h1
-        className={`mt-4 font-display text-[2.8rem] font-bold leading-[0.9] tracking-[-0.035em] sm:text-[3.8rem] lg:text-[4.6rem] xl:text-[5.6rem] 2xl:text-[6.4rem] ${
+        className={`mt-2.5 font-display text-[2.8rem] font-bold leading-[0.9] tracking-[-0.035em] sm:text-[3.8rem] lg:text-[4.6rem] xl:text-[5.6rem] 2xl:text-[6.4rem] ${
           isNavy ? "text-brand-yellow" : "text-brand-navy"
         }`}
       >
@@ -620,7 +620,7 @@ function HeroDesktopLayout({ theme = "yellow" }) {
       </h1>
 
       {/* MIDDLE: 2-COLUMN GRID (DETAILS ON LEFT, IMAGE ON RIGHT) */}
-      <div className="mt-6 grid w-full grid-cols-1 items-center gap-10 lg:grid-cols-[52%_48%] xl:mt-8">
+      <div className="mt-4 grid w-full grid-cols-1 items-center gap-8 lg:grid-cols-[52%_48%] xl:mt-5 xl:gap-10">
         {/* LEFT: TAGLINE, BULLET POINTS & BUTTONS */}
         <div className="max-w-[620px]">
           <p
@@ -632,7 +632,7 @@ function HeroDesktopLayout({ theme = "yellow" }) {
           </p>
 
           <ul
-            className={`mt-4 space-y-2.5 text-[13px] sm:text-[14px] xl:text-[15px] font-medium leading-relaxed ${
+            className={`mt-3 space-y-2 text-[13px] sm:text-[14px] xl:text-[15px] font-medium leading-relaxed ${
               isNavy ? "text-brand-yellow/90" : "text-brand-navy/90"
             }`}
           >
@@ -670,10 +670,10 @@ function HeroDesktopLayout({ theme = "yellow" }) {
             </li>
           </ul>
 
-          <div className="mt-6 flex flex-wrap gap-3">
+          <div className="mt-4 flex flex-wrap gap-2.5">
             <Link
               to="/profile"
-              className={`group inline-flex min-h-[48px] items-center justify-center gap-2 px-6 py-3.5 text-xs font-bold uppercase tracking-[0.12em] transition-all duration-300 ${
+              className={`group inline-flex min-h-[42px] items-center justify-center gap-2 px-5 py-2.5 text-xs font-bold uppercase tracking-[0.1em] transition-all duration-300 ${
                 isNavy
                   ? "bg-brand-yellow text-brand-black hover:bg-white"
                   : "bg-brand-navy text-white hover:bg-brand-black"
@@ -681,14 +681,14 @@ function HeroDesktopLayout({ theme = "yellow" }) {
             >
               Explore Profile
               <ArrowRight
-                size={16}
+                size={15}
                 className="transition-transform duration-300 group-hover:translate-x-1"
               />
             </Link>
 
             <Link
               to="/contact"
-              className={`inline-flex min-h-[48px] items-center justify-center border px-6 py-3.5 text-xs font-bold uppercase tracking-[0.12em] transition-all duration-300 ${
+              className={`inline-flex min-h-[42px] items-center justify-center border px-5 py-2.5 text-xs font-bold uppercase tracking-[0.1em] transition-all duration-300 ${
                 isNavy
                   ? "border-brand-yellow/50 text-brand-yellow hover:bg-brand-yellow hover:text-brand-black"
                   : "border-brand-navy/40 text-brand-navy hover:bg-brand-navy hover:text-white"
@@ -699,7 +699,7 @@ function HeroDesktopLayout({ theme = "yellow" }) {
           </div>
 
           {/* SCROLL INDICATOR */}
-          <div className="mt-8 flex items-center gap-3">
+          <div className="mt-5 flex items-center gap-3">
             <span
               className={`text-[9px] font-bold uppercase tracking-[0.35em] ${
                 isNavy ? "text-brand-yellow/60" : "text-brand-navy/60"
